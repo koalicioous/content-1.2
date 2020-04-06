@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Role;
+use App\Task;
 
 class User extends Authenticatable
 {
@@ -50,5 +51,10 @@ class User extends Authenticatable
     //Belongs to Role
     public function role(){
         return $this->belongsTo('App\Role');
+    }
+
+    //Belongs to Many Tasks
+    public function tasks(){
+        return $this->belongsToMany('App\Task');
     }
 }

@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\User;
 
 class Task extends Model
 {
@@ -10,4 +11,9 @@ class Task extends Model
     protected $attributes = [
         'is_done' => false,
     ];
+
+    //belongs to many User
+    public function users(){
+        return $this->belongsToMany('App\User');
+    }
 }
