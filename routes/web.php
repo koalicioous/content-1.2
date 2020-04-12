@@ -24,3 +24,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resources([
     'rubrik' => 'RubrikController',
 ]);
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
